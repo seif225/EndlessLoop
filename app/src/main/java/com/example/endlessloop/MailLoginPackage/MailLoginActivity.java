@@ -1,15 +1,17 @@
-package com.example.endlessloop;
+package com.example.endlessloop.MailLoginPackage;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.endlessloop.R;
+
+public class MailLoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.mail_login_activity);
 
 
 
