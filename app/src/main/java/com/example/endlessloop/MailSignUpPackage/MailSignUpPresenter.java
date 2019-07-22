@@ -45,7 +45,7 @@ public class MailSignUpPresenter {
         });
     }
 
-    void uploadUserDataToCloud(String firstName, String lastName, String email, String password, String gender, String userId) {
+    void uploadUserDataToCloud(String firstName, String lastName, String email, String password, String gender, String userId,String deviceToken) {
 
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("firstName", firstName);
@@ -54,7 +54,7 @@ public class MailSignUpPresenter {
         userMap.put("password", password);
         userMap.put("gender", gender);
         userMap.put("userId", userId);
-
+        userMap.put("devideToken",deviceToken);
         usersRef.document(userId).set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
