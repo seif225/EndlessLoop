@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "897090423746",
+    "firebase_url": "https://endleoop-47542.firebaseio.com",
+    "project_id": "endleoop-47542",
+    "storage_bucket": "endleoop-47542.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897090423746:android:4d0c18e14d271db4",
+        "android_client_info": {
+          "package_name": "com.example.endlessloop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897090423746-9u8563cdactq9qmc8a9iqhvc6rlhstbe.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.endlessloop",
+            "certificate_hash": "9f76b8f9a701db203471e62d4717db8299480024"
+          }
+        },
+        {
+          "client_id": "897090423746-tnf01ogimkakji6ffepomukfmt1kjrkv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXx1Bcnhxqrr1Od40rfjQ9KytnIQerrgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897090423746-tnf01ogimkakji6ffepomukfmt1kjrkv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
