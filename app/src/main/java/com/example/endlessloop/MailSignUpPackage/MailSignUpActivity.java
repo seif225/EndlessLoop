@@ -12,5 +12,11 @@ public class MailSignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mail_sign_up);
+
+
+        MailSignUpPresenter mailSignUpPresenter= new MailSignUpPresenter(this);
+
+        mailSignUpPresenter.SignUp("ahmed","124asd");
+
     }
 }
