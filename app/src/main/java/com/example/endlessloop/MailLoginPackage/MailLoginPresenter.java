@@ -6,6 +6,7 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 
 import com.example.endlessloop.MailSignUpPackage.MailSignUpActivity;
+import com.example.endlessloop.MainPackage.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -30,10 +31,19 @@ public class MailLoginPresenter {
 
                 if (task.isSuccessful()){
 
+                    sendUserToMainActivity();
 
                 }
             }
         });
+
+    }
+
+    private void sendUserToMainActivity() {
+
+    Intent i = new Intent ( context , MainActivity.class);
+    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+    context.startActivity(i);
 
     }
 

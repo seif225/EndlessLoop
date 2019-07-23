@@ -16,11 +16,11 @@ public class MailSignUpActivity extends AppCompatActivity {
 
 
     private EditText mailEt, passwordEt, confirmPasswordEt, firstnameEt, lastnameEt;
-    private TextView gender;
+    //private TextView gender;
     private RadioButton radioMale, radioFemale;
     private RadioGroup radioGroup;
+    private String firstName , lastName , password, email , gender;
     private Button confirmButton;
-    private String mail, password;
     private MailSignUpPresenter mailSignUpPresenter;
 
 
@@ -32,7 +32,7 @@ public class MailSignUpActivity extends AppCompatActivity {
 
         final MailSignUpPresenter mailSignUpPresenter = new MailSignUpPresenter(this);
 
-        mailSignUpPresenter.SignUp("ahmed", "124asd");
+
 
         InitializeFields();
 
@@ -41,19 +41,29 @@ public class MailSignUpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                mail = mailEt.getText().toString();
+                email = mailEt.getText().toString();
                 password = passwordEt.getText().toString();
 
-                if (mail.isEmpty()) {
+                if (email.isEmpty()) {
                     mailEt.setError("you cant leave this empty");
                 } else if (password.isEmpty()) {
                     passwordEt.setError("you have to create a password");
                 } else {
-                    mailSignUpPresenter.SignUp(mail, password);
+                    getUserData();
+                    mailSignUpPresenter.SignUp(firstName,lastName,email,password,gender);
+
                 }
             }
         });
 
+    }
+
+    private void getUserData() {
+        firstName = firstnameEt.getText().toString();
+        lastName = lastnameEt.getText().toString();
+        email=mailEt.getText().toString();
+        password=passwordEt.getText().toString();
+        if (radioMale.isChecked()) gender = "male"; else gender = "female";
     }
 
     private void InitializeFields() {
@@ -63,7 +73,7 @@ public class MailSignUpActivity extends AppCompatActivity {
         confirmPasswordEt = findViewById(R.id.tvConfirmPassword);
         firstnameEt = findViewById(R.id.tvFirstName);
         lastnameEt = findViewById(R.id.tvLastName);
-        gender = findViewById(R.id.tvGender);
+        //gender = findViewById(R.id.tvGender);
         radioGroup = findViewById(R.id.radioGroup);
         radioMale = findViewById(R.id.radioMale);
         radioFemale = findViewById(R.id.radioFemale);

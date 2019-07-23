@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         FirebaseApp.initializeApp(this);
+        setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
         presenter=new MainActivityPresenter(this);
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -94,18 +94,23 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_feed) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_friends) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_profile) {
 
-        } else if (id == R.id.nav_tools) {
+        } else if (id == R.id.nav_messages) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_notification) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_groups) {
 
+        }
+        else if (id == R.id.nav_logout) {
+
+            mAuth.signOut();
+            presenter.sendUserToLoginActivity();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
