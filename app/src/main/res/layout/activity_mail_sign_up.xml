@@ -4,140 +4,171 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
-    tools:context=".MailSignUpPackage.MailSignUpActivity">
+    tools:context=".MailSignUpPackage.MailSignUpActivity"
+    >
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/ImageView_profile"
         android:layout_width="96dp"
         android:layout_height="96dp"
+        android:background="@drawable/shapelogin"
         android:src="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintVertical_bias="0.13"
+        />
 
     <EditText
+        android:background="@drawable/shapeemail"
 
-        android:id="@+id/newEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:drawableStart="@drawable/ic_email_black_24dp"
+        android:layout_marginStart="8dp"
+        android:drawableTint="@color/colorPrimary"
+        android:drawableStart="@drawable/ic_person_outline_black_24dp"
         android:drawablePadding="8dp"
-        android:hint="New Email"
-        android:textColorHint="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFirstName"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <EditText
-        android:id="@+id/newPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_lock_outline_black_24dp"
-        android:drawablePadding="8dp"
-        android:hint="New Password"
-        android:textColorHint="@android:color/white"
-        app:layout_constraintEnd_toEndOf="@+id/newEmail"
-        app:layout_constraintStart_toStartOf="@+id/newEmail"
-        app:layout_constraintTop_toBottomOf="@+id/newEmail" />
-
-    <EditText
-        android:id="@+id/tvConfirmPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_lock_outline_black_24dp"
-        android:drawablePadding="8dp"
-        android:hint="Confirm Password"
-        android:textColorHint="@android:color/white"
-        app:layout_constraintEnd_toEndOf="@+id/newPassword"
-        app:layout_constraintStart_toStartOf="@id/newPassword"
-        app:layout_constraintTop_toBottomOf="@id/newPassword" />
-
-    <EditText
         android:id="@+id/tvFirstName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_person_black_24dp"
-        android:drawablePadding="8dp"
+
         android:hint="First Name"
-        android:textColorHint="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvLastName"
+        app:layout_constraintEnd_toEndOf="@+id/guideline"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toStartOf="@+id/tvConfirmPassword"
-        app:layout_constraintTop_toBottomOf="@id/ImageView_profile"
-        app:layout_constraintVertical_bias="0.13" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/fbutton_color_midnight_blue"
+        />
 
     <EditText
+        android:drawableTint="@color/colorPrimary"
+        android:background="@drawable/shapeemail"
+
+        android:drawableStart="@drawable/ic_person_outline_black_24dp"
+        android:drawablePadding="8dp"
         android:id="@+id/tvLastName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:drawableStart="@drawable/ic_person_black_24dp"
-        android:drawablePadding="8dp"
+        android:layout_margin="8dp"
         android:hint="Last Name"
-        android:textColorHint="@android:color/white"
-        app:layout_constraintEnd_toEndOf="@+id/newEmail"
+        android:textColor="@color/fbutton_color_midnight_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_weight="1"
-        app:layout_constraintStart_toEndOf="@+id/tvFirstName"
-        app:layout_constraintTop_toTopOf="@+id/tvFirstName"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:background="@drawable/shapeemail"
+        android:padding="8dp"
+        android:drawableTint="@color/colorPrimary"
+        android:layout_margin="8dp"
+        android:id="@+id/tvEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/ic_email_black_24dp"
+        android:drawablePadding="8dp"
+        android:hint="Your Email"
+        android:textColor="@color/fbutton_color_midnight_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFirstName" />
+
+    <EditText
+        android:drawableTint="@color/colorPrimary"
+        android:background="@drawable/shapeemail"
+        android:drawableStart="@drawable/ic_lock_outline_black_24dp"
+        android:id="@+id/tvPassword"
+        android:layout_width="0dp"
+        android:padding="8dp"
+        android:layout_height="wrap_content"
+        android:hint="Your Password"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/fbutton_color_midnight_blue"
+        app:layout_constraintEnd_toEndOf="@id/tvEmail"
+        app:layout_constraintStart_toStartOf="@id/tvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+    <EditText
+        android:drawableTint="@color/colorPrimary"
+        android:background="@drawable/shapeemail"
+        android:drawableStart="@drawable/ic_person_outline_black_24dp"
+        android:drawablePadding="8dp"
+        android:id="@+id/tvConfirmPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:hint="Confirm Your Password"
+        android:textColor="@color/fbutton_color_midnight_blue"
+        app:layout_constraintEnd_toEndOf="@id/tvEmail"
+        app:layout_constraintStart_toStartOf="@id/tvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
     <TextView
         android:id="@+id/tvGender"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Select Gender:"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@id/tvFirstName"
+        android:layout_margin="16dp"
+        android:text="Gender: "
+        android:textColor="@color/fbutton_color_midnight_blue"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/tvConfirmPassword"
+        app:layout_constraintStart_toStartOf="@id/tvConfirmPassword"
         app:layout_constraintTop_toBottomOf="@id/tvConfirmPassword" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
         android:layout_marginBottom="8dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/tvGender"
-        app:layout_constraintTop_toBottomOf="@id/tvGender"
-        app:layout_constraintVertical_bias="0.1">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/tvGender"
+        app:layout_constraintStart_toStartOf="@id/tvGender"
+        app:layout_constraintTop_toBottomOf="@id/tvGender">
 
         <RadioButton
             android:id="@+id/radioFemale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
-            android:text="Female"
-            android:textColor="@android:color/white" />
+            android:text="F"
+            android:textColor="@color/fbutton_color_midnight_blue" />
 
         <RadioButton
             android:id="@+id/radioMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Male"
-            android:textColor="@android:color/white" />
+            android:text="M"
+            android:textColor="@color/fbutton_color_midnight_blue" />
+
     </RadioGroup>
 
-    <Button
-        android:id="@+id/confirm_button"
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="confirm"
-        android:textAllCaps="false"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="200dp" />
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.3" />
+        android:text="Sign Up "
+        android:textAllCaps="false"
+        android:textColor="@color/fbutton_color_midnight_blue"
+        android:shadowColor="@color/fbutton_color_midnight_blue"
+        android:background="@drawable/shapelogin"
+
+
+        />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
