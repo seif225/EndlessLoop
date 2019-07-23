@@ -13,7 +13,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class MailSignUpPresenter {
@@ -23,30 +25,35 @@ public class MailSignUpPresenter {
     CollectionReference usersRef = db.collection(USERS);
     private Context context;
     private FirebaseAuth mAuth;
+    private List<String> list = new ArrayList<>();
+
 
     public MailSignUpPresenter(Context context) {
         this.context = context;
+
         mAuth = FirebaseAuth.getInstance();
     }
 
-    void SignUp(String mail, String password) {
+    void SignUp(final String firstName, final String lastName, final String email, final String password, final String gender) {
 
 
-        mAuth.createUserWithEmailAndPassword(mail, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if (task.isSuccessful()) {
 
                     //TODO upload user date to cloud ;
+                    uploadUserDataToCloud(firstName, lastName, email, password, gender);
                 }
 
             }
         });
     }
 
-    void uploadUserDataToCloud(String firstName, String lastName, String email, String password, String gender, String userId,String deviceToken) {
+    private void uploadUserDataToCloud(String firstName, String lastName, String email, String password, String gender) {
 
+        String userId = FirebaseAuth.getInstance().getUid();
         Map<String, Object> userMap = new HashMap<>();
         userMap.put("firstName", firstName);
         userMap.put("lastName", lastName);
@@ -54,13 +61,13 @@ public class MailSignUpPresenter {
         userMap.put("password", password);
         userMap.put("gender", gender);
         userMap.put("userId", userId);
-        userMap.put("devideToken",deviceToken);
         usersRef.document(userId).set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
 
                 if (task.isSuccessful()) {
                     //TODO: send user to the next page
+                    sendUserToMainActivity();
                 } else {
                     //TODO : handle exceptions and show message to the user
 

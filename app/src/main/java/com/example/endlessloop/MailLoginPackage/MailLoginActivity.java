@@ -63,5 +63,6 @@ public class MailLoginActivity extends AppCompatActivity {
         passwordEt = findViewById(R.id.enterPassword);
         loginButton = findViewById(R.id.BtnLogin);
         donthaveAnAccount = findViewById(R.id.dont_have_account);
+        mailLoginPresenter = new MailLoginPresenter(this);
     }
 }
